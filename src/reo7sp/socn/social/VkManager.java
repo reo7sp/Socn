@@ -47,9 +47,9 @@ public class VkManager extends SocialNetwork {
 
 	private VkManager() {
 		try {
-			loadSecrets();
+			loadSecret();
 		} catch (Exception err) {
-			Log.e("VkManager", "Can't load secret", err);
+			Log.w("VkManager", "Can't load secret " + err);
 		}
 	}
 

@@ -1,0 +1,21 @@
+apply plugin: 'java'
+
+sourceSets {
+	main {
+		java.srcDirs = ['src']
+		resources.srcDirs = ['src']
+	}
+}
+
+jar {
+	manifest.attributes('Main-Class': 'reo7sp.socn.Core')
+	from {
+		configurations.compile.collect {
+			it.isDirectory() ? it : zipTree(it)
+		}
+	}
+}
+
+dependencies {
+	compile fileTree('lib')
+}

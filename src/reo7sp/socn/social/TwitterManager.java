@@ -53,7 +53,7 @@ public class TwitterManager extends SocialNetwork {
 			String[] secrets = loadSecrets();
 			twitter.setOAuthConsumer(secrets[0], secrets[1]);
 		} catch (Exception err) {
-			Log.e("TwitterManager", "Can't load secrets", err);
+			Log.w("TwitterManager", "Can't load secrets " + err);
 		}
 	}
 
